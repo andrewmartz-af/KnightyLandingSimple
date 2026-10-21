@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Knighty. Find your perfect stay, from business travel to holiday.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Matches · Knighty</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23212121'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial' font-size='44' font-weight='700' fill='white'%3Ek%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="account-header" aria-label="Your account">
+      <a id="account-login" class="account-login" href="/login">Log in</a>
+      <div id="account-profile" class="account-profile" hidden>
+        <img id="profile-photo" class="profile-avatar" alt="" hidden>
+        <span id="profile-initials" class="profile-avatar profile-initials" aria-hidden="true"></span>
+        <span id="profile-name"></span>
+      </div>
+        <a href="/" id="brand" aria-label="Knighty">
+          <svg class="brand-key" viewBox="465 245 322 532" aria-hidden="true"><image href="/brand.png" width="1254" height="1254" /></svg>
+          <svg class="brand-name" viewBox="165 830 930 136" aria-hidden="true"><image href="/brand.png" width="1254" height="1254" /></svg>
+        </a>
+    </header>
+    <main class="results-main">
+      <section id="matches-page" class="search-home matches-page" aria-labelledby="brand">
+
+        <form role="search">
+          <div class="search-box">
+            <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+            <label class="sr-only" for="search">Describe the stay you're looking for</label>
+            <input id="search" name="q" type="text" placeholder="Describe the stay you're looking for in as much detail as you like." autocomplete="off" maxlength="2048" aria-describedby="login-note" required>
+            <button class="clear" type="button" aria-label="Clear search" hidden>×</button>
+          </div>
+          <p class="login-note" id="login-note"><a class="login-link" href="/login">Log in</a> or <a class="login-link" href="/signup">Sign up</a> to match with your personal preferences.</p>
+          <button class="submit" type="submit" aria-describedby="match-status" disabled>Show matches (<span id="match-count">0</span>)</button>
+          <p class="match-status" id="match-status" role="status">Matching coming soon.</p>
+        </form>
+        <section class="matches-results" aria-labelledby="matches-title">
+          <h2 id="matches-title" class="sr-only">Hotel matches</h2><p id="results-summary" class="results-summary" role="status">Your matches</p>
+          <p id="submitted-prompt" class="submitted-prompt"></p>
+          <p id="demo-disclosure" class="demo-disclosure" hidden>Demo preview: fictional hotels and illustrative rankings. No live availability or prices.</p>
+          <ol id="hotel-results" class="hotel-results"></ol>
+          <div class="matches-empty">
+            <h3>Your perfect stay starts here.</h3>
+            <p>Matching is coming soon. Once it’s available, stays that fit your prompt will appear here. Try “demo-alps” to explore 10 example results.</p>
+          </div>
+          <a class="login-link" href="/">Back to quick match</a>
+        </section>
+      </section>
+    </main>
+    <nav class="hotel-link-row" aria-label="Hotel partners"><a class="login-link" href="https://knighty.co/hotels">For Hotels</a></nav>
+    <footer><a class="footer-about" href="https://knighty.co/knighty">About Knighty</a><span>Your perfect stay starts here.</span></footer>
+  </body>
+</html>

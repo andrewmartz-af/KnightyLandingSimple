@@ -18,3 +18,7 @@ The homepage account display is ready for a future authentication provider. Afte
 - `server.mjs`: local development server
 
 The static HTML, CSS, and JavaScript can also be deployed on a static web host. No build step is needed.
+
+## Guest-app trip handoff
+
+Homepage login/signup links now send the current prompt to `https://knighty-iota.vercel.app/en/start-trip`. The prompt travels in a URL fragment, is retained through authentication on the guest origin, and is saved through an authenticated, idempotent command. The guest implementation is in `work/knighty-guest`; it must be deployed before publishing the updated landing page links. Local tests use an isolated fixture database. AI extraction remains unconnected; a new draft preserves the original text and leaves dates and budget unset. Existing trip limits still apply.
