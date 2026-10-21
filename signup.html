@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign up · Knighty</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/signup.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="login-page" aria-labelledby="signup-heading">
+        <a href="/" class="login-brand" aria-label="Knighty home">
+          <svg class="brand-key" viewBox="465 245 322 532" aria-hidden="true"><image href="/brand.png" width="1254" height="1254" /></svg>
+          <svg class="brand-name" viewBox="165 830 930 136" aria-hidden="true"><image href="/brand.png" width="1254" height="1254" /></svg>
+        </a>
+        <h1 id="signup-heading">Create your account</h1>
+        <p class="login-intro">Sign up to match with your personal preferences.</p>
+        <form id="signup-form">
+          <label for="email">Email address</label>
+          <input id="email" type="email" autocomplete="username" placeholder="you@example.com" required>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="new-password" minlength="8" required>
+          <button class="login-submit" type="submit" disabled>Sign up</button>
+          <p class="login-status" role="status" aria-live="polite">Account registration is coming soon.</p>
+        </form>
+        <p class="login-intro">Already have an account? <a class="login-link" href="/login">Log in</a></p>
+        <a class="login-link back-link" href="/">Back to finding your stay</a>
+      </section>
+    </main>
+    <footer><span>Knighty</span><span>Your perfect stay starts here.</span></footer>
+  </body>
+</html>
