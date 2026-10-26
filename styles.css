@@ -16,7 +16,7 @@ main { flex: 1; display: grid; place-items: center; padding: 48px 24px 120px; }
 h1 { margin: 0 auto 34px; display: flex; align-items: center; justify-content: center; gap: 22px; width: min(100%, 480px); }
 .brand-key { display: block; width: 62px; flex: 0 0 62px; height: auto; overflow: hidden; }
 .brand-name { display: block; width: min(100%, 390px); min-width: 0; height: auto; overflow: hidden; }
-.search-box { position: relative; display: flex; align-items: center; width: 100%; height: 56px; padding: 0 48px 0 64px; border: 1px solid #dfe1e5; border-radius: 24px; transition: box-shadow .15s, border-color .15s; }
+.search-box { position: relative; display: flex; align-items: center; width: 100%; height: 56px; padding: 0 64px; border: 1px solid #dfe1e5; border-radius: 24px; transition: box-shadow .15s, border-color .15s; }
 .search-box:hover, .search-box:focus-within { box-shadow: 0 2px 9px #20212418; border-color: #c9cdd5; }
 .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; stroke: #858b94; stroke-width: 1.7; stroke-linecap: round; }
 #search { width: 100%; min-width: 0; height: 24px; font: inherit; font-size: 16px; line-height: 1.5; text-align: left; border: 0; outline: 0; padding: 0; padding-left: var(--prompt-inset, 0px); background: transparent; color: #25262a; }
@@ -153,8 +153,8 @@ body:has(.results-main) #brand .brand-name { width: 139px; }
 
 /* Keep the complete prompt readable, with identical geometry after typing. */
 .search-box:has(.search-prompt) { display: grid; align-items: start; height: auto; min-height: 56px; padding-block: 16px; }
-.search-box:has(.search-prompt) #search { grid-area: 1 / 1; align-self: start; padding-left: 0; }
+.search-box:has(.search-prompt) #search { grid-area: 1 / 1; align-self: start; padding-left: var(--prompt-inset, 0px); }
 .search-box:has(.search-prompt) #search::placeholder { color: transparent; }
-.search-prompt { grid-area: 1 / 1; cursor: text; text-align: left; font-size: 14px; line-height: 24px; color: #81858d; }
+.search-prompt { grid-area: 1 / 1; cursor: text; text-align: center; font-size: 14px; line-height: 24px; color: #81858d; }
 #search:not(:placeholder-shown) ~ .search-prompt { visibility: hidden; }
 .search-box:has(.search-prompt) .search-icon { top: 28px; }

@@ -74,14 +74,14 @@ profilePhoto.addEventListener('error', () => {
 window.knightyAccount = Object.freeze({ setUser });
 setUser(null);
 
-// Keep the placeholder centered, with entered text starting at that same position.
-const promptMeasure = document.createElement('canvas').getContext('2d');
+// Align entered text with the centered prompt's first line, including when it wraps.
+const promptLabel = document.querySelector('.search-prompt');
 function alignPromptStart() {
-  const placeholderStyle = getComputedStyle(input, '::placeholder');
-  const inputStyle = getComputedStyle(input);
-  promptMeasure.font = `${placeholderStyle.fontWeight} ${placeholderStyle.fontSize} ${inputStyle.fontFamily}`;
-  const textWidth = promptMeasure.measureText(input.placeholder).width;
-  const inset = Math.max(0, (input.clientWidth - textWidth) / 2);
+  if (!promptLabel) return;
+  const range = document.createRange();
+  range.selectNodeContents(promptLabel);
+  const firstLine = range.getClientRects()[0];
+  const inset = firstLine ? Math.max(0, firstLine.left - input.getBoundingClientRect().left) : 0;
   input.style.setProperty('--prompt-inset', `${inset}px`);
 }
 new ResizeObserver(alignPromptStart).observe(input);
