@@ -51,6 +51,11 @@ footer { min-height: 58px; padding: 20px 32px; display: flex; justify-content: s
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
 .hotel-link-row { padding: 0 32px 20px; font-size: 13px; }
+.hotel-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 12px 22px; border-radius: 8px; background: #7041a4; color: #fff; font-size: 14px; text-decoration: none; box-shadow: 0 2px 4px #7041a41a; transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; }
+.hotel-button:hover, .hotel-button:focus-visible { transform: translateY(-4px); background: #633792; box-shadow: 0 10px 20px #7041a43d; }
+.hotel-button:focus-visible { outline: 2px solid #7041a4; outline-offset: 4px; }
+.hotel-button:active { transform: translateY(-1px); box-shadow: 0 3px 6px #7041a433; }
+@media (prefers-reduced-motion: reduce) { .hotel-button:hover, .hotel-button:focus-visible, .hotel-button:active { transform: none; } }
 @media (max-width: 480px) { .hotel-link-row { padding-left: 20px; padding-right: 20px; } }
 
 .footer-about { color: inherit; text-decoration: none; }
