@@ -145,3 +145,11 @@ body:has(.results-main) #brand .brand-name { width: 139px; }
 .profile-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
 .hotel-profile-dialog.founders-circle-profile { background: #f4eefb; }
 .founders-circle-profile .profile-scroll::-webkit-scrollbar-thumb { border-color: #f4eefb; }
+
+/* Keep the complete prompt readable, with identical geometry after typing. */
+.search-box:has(.search-prompt) { display: grid; align-items: start; height: auto; min-height: 56px; padding-block: 16px; }
+.search-box:has(.search-prompt) #search { grid-area: 1 / 1; align-self: start; padding-left: 0; }
+.search-box:has(.search-prompt) #search::placeholder { color: transparent; }
+.search-prompt { grid-area: 1 / 1; cursor: text; text-align: left; font-size: 14px; line-height: 24px; color: #81858d; }
+#search:not(:placeholder-shown) ~ .search-prompt { visibility: hidden; }
+.search-box:has(.search-prompt) .search-icon { top: 28px; }
